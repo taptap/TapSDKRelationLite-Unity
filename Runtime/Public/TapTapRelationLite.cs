@@ -77,6 +77,6 @@ namespace TapSDK.RelationLite
             TapTapRelationLiteManager.Instance.UnregisterRelationLiteCallback(callback);
         }
 
-        public static readonly string Version = "4.6.2-beta.2";
+        public static readonly string Version = "4.6.2-beta.5";
     }
 } 
