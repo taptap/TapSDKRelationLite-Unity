@@ -33,52 +33,52 @@ namespace TapSDK.RelationLite.Internal
 
         public void Init(string clientId, TapTapRegionType regionType)
         {
-            _impl.Init(clientId, regionType);
+            _impl?.Init(clientId, regionType);
         }
 
         public void SetOrientation(int orientation)
         {
-            _impl.SetOrientation(orientation);
+            _impl?.SetOrientation(orientation);
         }
 
         public void InviteGame()
         {
-            _impl.InviteGame();
+            _impl?.InviteGame();
         }
 
         public void InviteTeam(string teamId)
         {
-            _impl.InviteTeam(teamId);
+            _impl?.InviteTeam(teamId);
         }
 
         public void GetFriendsList(string nextPageToken, ITapTapRelationLiteRequestCallback callback)
         {
-            _impl.GetFriendsList(nextPageToken, callback);
+            _impl?.GetFriendsList(nextPageToken, callback);
         }
 
         public void GetFollowingList(string nextPageToken, ITapTapRelationLiteRequestCallback callback)
         {
-            _impl.GetFollowingList(nextPageToken, callback);
+            _impl?.GetFollowingList(nextPageToken, callback);
         }
 
         public void GetFansList(string nextPageToken, ITapTapRelationLiteRequestCallback callback)
         {
-            _impl.GetFansList(nextPageToken, callback);
+            _impl?.GetFansList(nextPageToken, callback);
         }
 
         public void SyncRelationshipWithOpenId(int action, string nickname, string friendNickname, string friendOpenId, ITapTapRelationLiteRequestCallback callback)
         {
-            _impl.SyncRelationshipWithOpenId(action, nickname, friendNickname, friendOpenId, callback);
+            _impl?.SyncRelationshipWithOpenId(action, nickname, friendNickname, friendOpenId, callback);
         }
 
         public void SyncRelationshipWithUnionId(int action, string nickname, string friendNickname, string friendUnionId, ITapTapRelationLiteRequestCallback callback)
         {
-            _impl.SyncRelationshipWithUnionId(action, nickname, friendNickname, friendUnionId, callback);
+            _impl?.SyncRelationshipWithUnionId(action, nickname, friendNickname, friendUnionId, callback);
         }
 
         public void ShowTapUserProfile(string openId, string unionId)
         {
-            _impl.ShowTapUserProfile(openId, unionId);
+            _impl?.ShowTapUserProfile(openId, unionId);
         }
 
 
@@ -87,7 +87,7 @@ namespace TapSDK.RelationLite.Internal
             if (callback != null && !_relationCallbacks.Contains(callback))
             {
                 _relationCallbacks.Add(callback);
-                _impl.RegisterRelationLiteCallback(callback);
+                _impl?.RegisterRelationLiteCallback(callback);
             }
         }
 
@@ -96,7 +96,7 @@ namespace TapSDK.RelationLite.Internal
             if (callback != null && _relationCallbacks.Contains(callback))
             {
                 _relationCallbacks.Remove(callback);
-                _impl.UnregisterRelationLiteCallback(callback);
+                _impl?.UnregisterRelationLiteCallback(callback);
             }
         }
     }
